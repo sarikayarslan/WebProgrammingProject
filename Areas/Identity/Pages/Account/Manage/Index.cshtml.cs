@@ -33,6 +33,7 @@ namespace WebProgrammingProject.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
+
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
@@ -42,7 +43,6 @@ namespace WebProgrammingProject.Areas.Identity.Pages.Account.Manage
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
             Username = userName;
 
             Input = new InputModel

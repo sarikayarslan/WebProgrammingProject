@@ -29,6 +29,16 @@
                 <span asp-validation-for="Input.Birthday" class="text-danger"></span>
             </div>
 
+             <div class="form-group">
+            <label asp-for="Input.Department" class="control-label"></label>
+            <select asp-for="Input.Department" 
+                    class="form-control" 
+                    asp-items="Html.GetEnumSelectList<Department>()">
+                <option>Select type ...</option>
+            </select>
+            <span asp-validation-for="Input.Department" class="text-danger"></span>
+        </div>
+
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
                 <input asp-for="Input.Email" class="form-control" />

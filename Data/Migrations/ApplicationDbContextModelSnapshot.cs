@@ -179,18 +179,21 @@ namespace WebProgrammingProject.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ClubName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("FoundationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PresidentId")
-                        .HasColumnType("int");
+                    b.Property<string>("PresidentEmail")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PresidentId1")
+                    b.Property<string>("PresidentId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PresidentId1");
+                    b.HasIndex("PresidentId");
 
                     b.ToTable("Club");
                 });
@@ -208,10 +211,7 @@ namespace WebProgrammingProject.Data.Migrations
                     b.Property<DateTime>("JoinDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserMission")
@@ -221,7 +221,7 @@ namespace WebProgrammingProject.Data.Migrations
 
                     b.HasIndex("ClubId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("ClubUser");
                 });
@@ -313,17 +313,14 @@ namespace WebProgrammingProject.Data.Migrations
                     b.Property<int>("AdvertisementId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AdvertisementId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserAdvertisement");
                 });
@@ -383,7 +380,7 @@ namespace WebProgrammingProject.Data.Migrations
                 {
                     b.HasOne("WebProgrammingProject.Models.User", "President")
                         .WithMany()
-                        .HasForeignKey("PresidentId1");
+                        .HasForeignKey("PresidentId");
 
                     b.Navigation("President");
                 });
@@ -398,7 +395,7 @@ namespace WebProgrammingProject.Data.Migrations
 
                     b.HasOne("WebProgrammingProject.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Club");
 
@@ -415,7 +412,7 @@ namespace WebProgrammingProject.Data.Migrations
 
                     b.HasOne("WebProgrammingProject.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Advertisement");
 

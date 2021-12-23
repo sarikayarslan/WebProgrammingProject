@@ -53,6 +53,7 @@ namespace WebProgrammingProject.Areas.Identity.Pages.Account
             [DataType(DataType.Date)]
             [Required]
             public DateTime Birthday { get; set; }
+            [DataType(DataType.Text)]
             public Department Department { get; set; }
 
             [Required]
@@ -84,7 +85,7 @@ namespace WebProgrammingProject.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = Input.Email, Email = Input.Email, Name=Input.Name, Surname = Input.Surname, Birthday= Input.Birthday };
+                var user = new User { UserName = Input.Email, Email = Input.Email, Name=Input.Name, Surname = Input.Surname, Birthday= Input.Birthday, Department =Input.Department };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

@@ -9,6 +9,12 @@ namespace WebProgrammingProject.Models
         public string Surname { get; set; }
         public DateTime Birthday { get; set; }
         public Department? Department { get; set; }
+        public string NameSurname 
+        { 
+            get {
+                return this.Name + " " + this.Surname;
+                    }
+        }
 
     }
 }
