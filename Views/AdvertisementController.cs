@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +14,19 @@ namespace WebProgrammingProject.Views
     public class AdvertisementController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public AdvertisementController(ApplicationDbContext context)
+        public AdvertisementController(ApplicationDbContext context, UserManager<User> userManager)
         {
+            _userManager = userManager;
             _context = context;
         }
 
         // GET: Advertisement
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Advertisement.ToListAsync());
+            var applicationDbContext = _context.Advertisement.Include(a => a.User);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Advertisement/Details/5
@@ -34,6 +38,7 @@ namespace WebProgrammingProject.Views
             }
 
             var advertisement = await _context.Advertisement
+                .Include(a => a.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (advertisement == null)
             {
@@ -46,6 +51,7 @@ namespace WebProgrammingProject.Views
         // GET: Advertisement/Create
         public IActionResult Create()
         {
+            ViewData["UserId"] = new SelectList(_context.Users.Where(x => x.Id == _userManager.GetUserId(HttpContext.User)), "Id", "NameSurname");
             return View();
         }
 
@@ -54,7 +60,7 @@ namespace WebProgrammingProject.Views
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Explanation")] Advertisement advertisement)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,UserId")] Advertisement advertisement)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +68,7 @@ namespace WebProgrammingProject.Views
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "NameSurname", advertisement.UserId);
             return View(advertisement);
         }
 
@@ -78,6 +85,7 @@ namespace WebProgrammingProject.Views
             {
                 return NotFound();
             }
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "NameSurname", advertisement.UserId);
             return View(advertisement);
         }
 
@@ -86,7 +94,7 @@ namespace WebProgrammingProject.Views
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Explanation")] Advertisement advertisement)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,UserId")] Advertisement advertisement)
         {
             if (id != advertisement.Id)
             {
@@ -113,6 +121,7 @@ namespace WebProgrammingProject.Views
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "NameSurname", advertisement.UserId);
             return View(advertisement);
         }
 
@@ -125,6 +134,7 @@ namespace WebProgrammingProject.Views
             }
 
             var advertisement = await _context.Advertisement
+                .Include(a => a.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (advertisement == null)
             {

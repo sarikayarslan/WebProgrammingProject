@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +14,26 @@ namespace WebProgrammingProject.Views
     public class ClubUserController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public ClubUserController(ApplicationDbContext context)
+        private readonly UserManager<User> _userManager;
+        public ClubUserController(ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: ClubUser
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.ClubUser.Include(c => c.Club).Include(c => c.User);
-            return View(await applicationDbContext.ToListAsync());
+            var userId = _userManager.GetUserId(HttpContext.User);
+            if(userId == null)
+            {
+                return RedirectToAction("/Account/Login", "Identity");
+            }
+            else {
+                User user = _userManager.FindByEmailAsync(userId).Result;
+                var applicationDbContext = _context.ClubUser.Include(c => c.Club).Where(x => x.User.Email == user.Email);
+                return View(await applicationDbContext.ToListAsync());
+            }
         }
 
         // GET: ClubUser/Details/5
@@ -36,7 +46,6 @@ namespace WebProgrammingProject.Views
 
             var clubUser = await _context.ClubUser
                 .Include(c => c.Club)
-                .Include(c => c.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (clubUser == null)
             {
@@ -49,8 +58,7 @@ namespace WebProgrammingProject.Views
         // GET: ClubUser/Create
         public IActionResult Create()
         {
-            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "ClubName");
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "NameSurname");
+            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "Id");
             return View();
         }
 
@@ -67,8 +75,7 @@ namespace WebProgrammingProject.Views
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "ClubName", clubUser.ClubId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "UserName", clubUser.UserId);
+            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "Id", clubUser.ClubId);
             return View(clubUser);
         }
 
@@ -85,8 +92,7 @@ namespace WebProgrammingProject.Views
             {
                 return NotFound();
             }
-            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "ClubName", clubUser.ClubId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "UserName", clubUser.UserId);
+            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "Id", clubUser.ClubId);
             return View(clubUser);
         }
 
@@ -122,8 +128,7 @@ namespace WebProgrammingProject.Views
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "ClubName", clubUser.ClubId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "UserName", clubUser.UserId);
+            ViewData["ClubId"] = new SelectList(_context.Club, "Id", "Id", clubUser.ClubId);
             return View(clubUser);
         }
 
@@ -137,7 +142,6 @@ namespace WebProgrammingProject.Views
 
             var clubUser = await _context.ClubUser
                 .Include(c => c.Club)
-                .Include(c => c.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (clubUser == null)
             {
