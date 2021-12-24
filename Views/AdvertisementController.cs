@@ -52,6 +52,7 @@ namespace WebProgrammingProject.Views
         public IActionResult Create()
         {
             ViewData["UserId"] = new SelectList(_context.Users.Where(x => x.Id == _userManager.GetUserId(HttpContext.User)), "Id", "NameSurname");
+
             return View();
         }
 
@@ -159,5 +160,7 @@ namespace WebProgrammingProject.Views
         {
             return _context.Advertisement.Any(e => e.Id == id);
         }
+
+
     }
 }

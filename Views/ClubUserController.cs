@@ -27,7 +27,6 @@ namespace WebProgrammingProject.Views
         {
             var applicationDbContext = _context.ClubUser.Include(c => c.Club).Include(c => c.User);
             var user = new SelectList(_context.Users.Where(x => x.Id == _userManager.GetUserId(HttpContext.User)), "Id", "Id").FirstOrDefault();
-;
             return View(await applicationDbContext.Where(x=>x.User.Id ==user.Value).ToListAsync());
         }
 
