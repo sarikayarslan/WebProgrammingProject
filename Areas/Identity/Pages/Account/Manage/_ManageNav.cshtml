@@ -4,8 +4,16 @@
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
 <ul class="nav nav-pills flex-column">
-    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">@language.Getkey("Profile")</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">@language.Getkey("Password")</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">@language.Getkey("Profile")</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">@language.Getkey("Password")</a></li>
+      
+        @if(User.IsInRole("Administrator")){
+        <li class="nav-item"><a class="nav-link" asp-controller="Role" asp-action="Create">@language.Getkey("RoleCreate")</a></li>
+         <li class="nav-item"><a class="nav-link" asp-controller="Club" asp-action="Create">@language.Getkey("CreateClub")</a></li>
+
+        }
+
+    
     @if (hasExternalLogins)
     {
         <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>

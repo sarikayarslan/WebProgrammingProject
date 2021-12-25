@@ -74,33 +74,30 @@ namespace WebProgrammingProject
       });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<User>( options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<User>( options => options.SignIn.RequireConfirmedAccount = true)
+            //   .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDefaultIdentity<User>(options => {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+
+            }).AddRoles<IdentityRole>()
+             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
+            //services.AddIdentity<User,AppRole>( options => options.SignIn.RequireConfirmedAccount = false)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI().AddDefaultTokenProviders();
+            services.AddRazorPages();
             services.AddControllersWithViews();
         }
 
@@ -117,6 +114,7 @@ namespace WebProgrammingProject
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+                app.UseAuthentication();
             }
 
 
@@ -125,13 +123,6 @@ namespace WebProgrammingProject
             var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
 
             app.UseRequestLocalization(locOptions.Value);
-
-
-
-
-
-
-
 
 
 

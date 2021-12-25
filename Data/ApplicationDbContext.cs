@@ -17,6 +17,7 @@ namespace WebProgrammingProject.Data
         public DbSet<ClubUser> ClubUser { get; set; }
         public DbSet<Advertisement> Advertisement { get; set; }
         public DbSet<JobsUser> JobsUser { get; set; }
+        public DbSet<WebProgrammingProject.Models.ProjectRole> ProjectRole { get; set; }
 
 
     }

@@ -477,3 +477,4 @@ D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Iden
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs

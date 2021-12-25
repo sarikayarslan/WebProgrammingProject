@@ -5,10 +5,20 @@
 }
 
 <h1>    @language.Getkey("Clubs")</h1>
+          @if(User.IsInRole("Administrator")){
+        <p>
+            <a asp-action="Create">@language.Getkey("ClubCreate")</a>
+        </p>
+                }
+           else if (User.IsInRole("User"))
+                    {
+                        <p>
+                            <a asp-controller="ClubUser" asp-action="Create">@language.Getkey("JoinClub")</a>
+                        </p>
+                    }
 
-<p>
-    <a asp-action="Create">    @language.Getkey("ClubCreate")</a>
-</p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -37,9 +47,17 @@
                 @Html.DisplayFor(modelItem => item.PresidentEmail)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">@language.Getkey("Edit")</a> |
+             @if(User.IsInRole("Administrator")){
+
+                <a asp-action="Edit" asp-route-id="@item.Id">@language.Getkey("Edit")</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">@language.Getkey("Delete")</a>
+
+                    }
+
+
+
                 <a asp-action="Details" asp-route-id="@item.Id">@language.Getkey("Details")</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">@language.Getkey("Delete")</a>
+
             </td>
         </tr>
 }

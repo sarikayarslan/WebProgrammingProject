@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Arslan\\Documents\\GitHub\\WebProgrammingProject\\WebProgrammingProject.csproj": {}
+    "D:\\Projeler\\ASPProjeleri\\WebProgrammingProject\\WebProgrammingProject.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Arslan\\Documents\\GitHub\\WebProgrammingProject\\WebProgrammingProject.csproj": {
+    "D:\\Projeler\\ASPProjeleri\\WebProgrammingProject\\WebProgrammingProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Arslan\\Documents\\GitHub\\WebProgrammingProject\\WebProgrammingProject.csproj",
+        "projectUniqueName": "D:\\Projeler\\ASPProjeleri\\WebProgrammingProject\\WebProgrammingProject.csproj",
         "projectName": "WebProgrammingProject",
-        "projectPath": "c:\\Users\\Arslan\\Documents\\GitHub\\WebProgrammingProject\\WebProgrammingProject.csproj",
+        "projectPath": "D:\\Projeler\\ASPProjeleri\\WebProgrammingProject\\WebProgrammingProject.csproj",
         "packagesPath": "C:\\Users\\Arslan\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Arslan\\Documents\\GitHub\\WebProgrammingProject\\obj\\",
+        "outputPath": "D:\\Projeler\\ASPProjeleri\\WebProgrammingProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Arslan\\AppData\\Roaming\\NuGet\\NuGet.Config",

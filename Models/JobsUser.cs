@@ -1,4 +1,4 @@
-﻿namespace WebProgrammingProject.Models
+﻿ namespace WebProgrammingProject.Models
 {
     public class JobsUser
     {

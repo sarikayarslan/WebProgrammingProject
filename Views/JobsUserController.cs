@@ -26,7 +26,8 @@ namespace WebProgrammingProject.Views
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.JobsUser.Include(j => j.Advertisement).Include(j => j.UserName);
-            return View(await applicationDbContext.ToListAsync());
+            var user = new SelectList(_context.Users.Where(x => x.Id == _userManager.GetUserId(HttpContext.User)), "Id", "Id").FirstOrDefault();
+            return View(await applicationDbContext.Where(x => x.UserId == user.Value || user.Value ==x.Advertisement.UserId ).ToListAsync());
         }
 
         // GET: JobsUser/Details/5

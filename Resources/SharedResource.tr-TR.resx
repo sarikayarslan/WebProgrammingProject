@@ -196,10 +196,13 @@
     <value>Katılım Tarihim</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Dil</value>
+    <value>Türkçe</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
   </data>
   <data name="Mission" xml:space="preserve">
     <value>Görev</value>

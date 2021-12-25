@@ -196,10 +196,13 @@
     <value>Join Date</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>English</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
   </data>
   <data name="Mission" xml:space="preserve">
     <value>Mission</value>

@@ -1,5 +1,7 @@
 ﻿@inject LanguageService language
-
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 
 <!DOCTYPE html>
@@ -28,12 +30,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="Index">@language.Getkey("Advertisements")</a>
                         </li>
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ClubUser" asp-action="Index">@language.Getkey("MyClubs")</a>
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="JobsUSer" asp-action="Index">@language.Getkey("MyJobs")</a>
                         </li>  
+                        }
                     </ul>
 
 
