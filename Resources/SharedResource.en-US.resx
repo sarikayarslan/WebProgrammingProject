@@ -267,6 +267,9 @@
   <data name="UserName" xml:space="preserve">
     <value>User Name</value>
   </data>
+  <data name="UserNameMyJobs" xml:space="preserve">
+    <value>Applicant User</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>

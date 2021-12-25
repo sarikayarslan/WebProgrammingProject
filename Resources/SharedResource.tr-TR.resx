@@ -267,6 +267,9 @@
   <data name="UserName" xml:space="preserve">
     <value>Kullanıcı Adı</value>
   </data>
+  <data name="UserNameMyJobs" xml:space="preserve">
+    <value>Başvuran Kişi</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Merhaba</value>
   </data>
