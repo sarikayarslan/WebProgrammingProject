@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@inject LanguageService language
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProgrammingProject</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Advertisement" asp-action="Index">SAUhub</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,18 +23,58 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Club" asp-action="Index">Clubs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Club" asp-action="Index">@language.Getkey("Clubs")</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="Index">Advertisement</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="Index">@language.Getkey("Advertisements")</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ClubUser" asp-action="Index">My Clubs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ClubUser" asp-action="Index">@language.Getkey("MyClubs")</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="JobsUSer" asp-action="Index">My Jobs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="JobsUSer" asp-action="Index">@language.Getkey("MyJobs")</a>
                         </li>  
                     </ul>
+
+
+
+
+                     <div class="dropdown show">
+                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       @language.Getkey("Language")
+                     </a>
+
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                         <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+
+                         <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="nav-link"><i class="flag-icon flag-icon-de"></i> Türkçe</a></li>
+
+                     </div>
+                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <partial name="_LoginPartial" /> 
                 </div>
             </div>

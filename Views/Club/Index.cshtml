@@ -1,25 +1,25 @@
 ﻿@model IEnumerable<WebProgrammingProject.Models.Club>
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>    @language.Getkey("Clubs")</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">    @language.Getkey("ClubCreate")</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ClubName)
+                @language.Getkey("ClubName")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FoundationDate)
+                @language.Getkey("FoundationDate")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PresidentEmail)
+                @language.Getkey("PresidentEmail")
             </th>
             <th></th>
         </tr>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.PresidentEmail)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">@language.Getkey("Edit")</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@language.Getkey("Details")</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@language.Getkey("Delete")</a>
             </td>
         </tr>
 }

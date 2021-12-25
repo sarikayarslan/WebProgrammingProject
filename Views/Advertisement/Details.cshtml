@@ -1,36 +1,35 @@
 ﻿@model WebProgrammingProject.Models.Advertisement
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1> @language.Getkey("Details")</h1>
 
 <div>
-    <h4>Advertisement</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
+            @language.Getkey("Title")
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
+            @language.Getkey("Description")
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
+            @language.Getkey("Advertiser")
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
+            @Html.DisplayFor(model => model.User.NameSurname)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">@language.Getkey("Edit")</a> |
+    <a asp-action="Index">@language.Getkey("BacktoList")</a>
 </div>

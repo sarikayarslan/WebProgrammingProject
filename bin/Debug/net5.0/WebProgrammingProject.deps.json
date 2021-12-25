@@ -320,6 +320,14 @@
         "runtime": {
           "WebProgrammingProject.dll": {}
         },
+        "resources": {
+          "en-US/WebProgrammingProject.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/WebProgrammingProject.resources.dll": {
+            "locale": "tr-TR"
+          }
+        },
         "compile": {
           "WebProgrammingProject.dll": {}
         }

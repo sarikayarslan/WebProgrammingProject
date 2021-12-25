@@ -467,3 +467,10 @@ D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\Jobs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\JobsUser\Index.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingProject.csproj.AssemblyReference.cache
+D:\Projeler\ASPProjeleri\WebProgrammingProject\bin\Debug\net5.0\en-US\WebProgrammingProject.resources.dll
+D:\Projeler\ASPProjeleri\WebProgrammingProject\bin\Debug\net5.0\tr-TR\WebProgrammingProject.resources.dll
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingProject.Resources.SharedResource.en-US.resources
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingProject.Resources.SharedResource.tr-TR.resources
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingProject.csproj.GenerateResource.cache
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\en-US\WebProgrammingProject.resources.dll
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\tr-TR\WebProgrammingProject.resources.dll

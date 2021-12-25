@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<WebProgrammingProject.Models.JobsUser>
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>@language.Getkey("MyJobs")</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.UserName)
+                @language.Getkey("User")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Advertisement)
+                @language.Getkey("Title")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsAccepted)
+                @language.Getkey("IsAccepted")
             </th>
             <th></th>
         </tr>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.IsAccepted)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.JobsUserId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JobsUserId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JobsUserId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.JobsUserId">@language.Getkey("Edit")</a> |
+                <a asp-action="Details" asp-route-id="@item.JobsUserId">@language.Getkey("Details")</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobsUserId">@language.Getkey("Delete")</a>
             </td>
         </tr>
 }
