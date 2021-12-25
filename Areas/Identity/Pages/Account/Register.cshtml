@@ -1,30 +1,31 @@
 ﻿@page
 @model RegisterModel
+@inject LanguageService language
 @{
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>@language.Getkey("Register")</h1>
 
 <div class="row">
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
+            <h4>@language.Getkey("CreateAccount")</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.Name"></label>
+                <label asp-for="Input.Name">@language.Getkey("Name")</label>
                 <input asp-for="Input.Name" class="form-control" />
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
             </div>
                     <div class="form-group">
-                <label asp-for="Input.Surname"></label>
+                <label asp-for="Input.Surname">@language.Getkey("Surname")</label>
                 <input asp-for="Input.Surname" class="form-control" />
                 <span asp-validation-for="Input.Surname" class="text-danger"></span>
             </div>
                <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
-                <label asp-for="Input.Birthday"></label>
+                <label asp-for="Input.Birthday">@language.Getkey("Birthday")</label>
                 <input asp-for="Input.Birthday" class="form-control" />
                 <span asp-validation-for="Input.Birthday" class="text-danger"></span>
             </div>
@@ -34,41 +35,37 @@
             <select asp-for="Input.Department" 
                     class="form-control" 
                     asp-items="Html.GetEnumSelectList<Department>()">
-                <option>Select type ...</option>
+                <option>@language.Getkey("SelectDepartment")</option>
             </select>
             <span asp-validation-for="Input.Department" class="text-danger"></span>
         </div>
 
             <div class="form-group">
-                <label asp-for="Input.Email"></label>
+                <label asp-for="Input.Email">@language.Getkey("Email")</label>
                 <input asp-for="Input.Email" class="form-control" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Password"></label>
+                <label asp-for="Input.Password">@language.Getkey("Password")</label>
                 <input asp-for="Input.Password" class="form-control" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
+                <label asp-for="Input.ConfirmPassword">@language.Getkey("ConfirmPassword")</label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">@language.Getkey("Register")</button>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
-            <h4>Use another service to register.</h4>
-            <hr />
+            
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
+
                     </div>
                 }
                 else

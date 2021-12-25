@@ -135,6 +135,9 @@
   <data name="BacktoList" xml:space="preserve">
     <value>Back to List</value>
   </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
   <data name="ClubCreate" xml:space="preserve">
     <value>Create Club</value>
   </data>
@@ -144,11 +147,23 @@
   <data name="Clubs" xml:space="preserve">
     <value>Clubs</value>
   </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confim Password</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Create a New Account</value>
+  </data>
+  <data name="CreateJobsUser" xml:space="preserve">
+    <value>Create Job Application</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="DeleteClub" xml:space="preserve">
+    <value>Delete Club</value>
   </data>
   <data name="DeleteWarning" xml:space="preserve">
     <value>Are you sure you want to delete?</value>
@@ -162,17 +177,29 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
   <data name="FoundationDate" xml:space="preserve">
     <value>Foundation Date</value>
   </data>
   <data name="IsAccepted" xml:space="preserve">
     <value>Situation</value>
   </data>
+  <data name="JoinClub" xml:space="preserve">
+    <value>Join New Club</value>
+  </data>
   <data name="JoinDate" xml:space="preserve">
     <value>Join Date</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>Mission</value>
   </data>
   <data name="MyClubs" xml:space="preserve">
     <value>My Clubs</value>
@@ -183,17 +210,41 @@
   <data name="MyMission" xml:space="preserve">
     <value>My Mission</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="PresidentEmail" xml:space="preserve">
     <value>President E-Mail</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterMessage1" xml:space="preserve">
+    <value>Join Us</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="SelectDepartment" xml:space="preserve">
+    <value>Select Your Department</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Surname</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>

@@ -1,36 +1,35 @@
 ﻿@model WebProgrammingProject.Models.ClubUser
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>@language.Getkey("Delete")</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>@language.Getkey("DeleteWarning")</h3>
 <div>
-    <h4>ClubUser</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
+            @language.Getkey("UserName")
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
+            @Html.DisplayFor(model => model.User.NameSurname)
         </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Club)
+           @language.Getkey("ClubName")
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Club.Id)
+            @Html.DisplayFor(model => model.Club.ClubName)
         </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserMission)
+            @language.Getkey("Mission")
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UserMission)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JoinDate)
+            @language.Getkey("JoinDate")
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JoinDate)
@@ -39,7 +38,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value=" @language.Getkey("Delete")" class="btn btn-danger" /> |
+        <a asp-action="Index"> @language.Getkey("BacktoList")</a>
     </form>
 </div>

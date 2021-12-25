@@ -1,12 +1,11 @@
 ﻿@model WebProgrammingProject.Models.ClubUser
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1> @language.Getkey("Edit")</h1>
 
-<h4>ClubUser</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,34 +13,34 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
+                <label asp-for="UserId" class="control-label"> @language.Getkey("UserName")</label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ClubId" class="control-label"></label>
+                <label asp-for="ClubId" class="control-label"> @language.Getkey("ClubName")</label>
                 <select asp-for="ClubId" class="form-control" asp-items="ViewBag.ClubId"></select>
                 <span asp-validation-for="ClubId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UserMission" class="control-label"></label>
+                <label asp-for="UserMission" class="control-label"> @language.Getkey("Mission")</label>
                 <input asp-for="UserMission" class="form-control" />
                 <span asp-validation-for="UserMission" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="JoinDate" class="control-label"></label>
+                <label asp-for="JoinDate" class="control-label"> @language.Getkey("JoinDate")</label>
                 <input asp-for="JoinDate" class="form-control" />
                 <span asp-validation-for="JoinDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="@language.Getkey("Save")" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@language.Getkey("BacktoList")</a>
 </div>
 
 @section Scripts {

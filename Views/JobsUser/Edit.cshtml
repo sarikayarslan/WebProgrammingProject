@@ -1,12 +1,11 @@
 ﻿@model WebProgrammingProject.Models.JobsUser
-
+@inject LanguageService language
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>@language.Getkey("Edit")</h1>
 
-<h4>JobsUser</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,29 +13,31 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="JobsUserId" />
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
+                <label asp-for="UserId" class="control-label">@language.Getkey("UserName")</label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AdvertisementId" class="control-label"></label>
+                <label asp-for="AdvertisementId" class="control-label">@language.Getkey("Title")</label>
                 <select asp-for="AdvertisementId" class="form-control" asp-items="ViewBag.AdvertisementId"></select>
                 <span asp-validation-for="AdvertisementId" class="text-danger"></span>
             </div>
+
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsAccepted" /> @Html.DisplayNameFor(model => model.IsAccepted)
+                    <input class="form-check-input" asp-for="IsAccepted" />@language.Getkey("IsAccepted")
                 </label>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="@language.Getkey("Save")" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@language.Getkey("BacktoList")</a>
 </div>
 
 @section Scripts {
