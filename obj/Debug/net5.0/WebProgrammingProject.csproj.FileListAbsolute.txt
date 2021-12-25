@@ -444,7 +444,6 @@ D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Iden
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\Club\Create.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\Club\Delete.cshtml.g.cs
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Views\Club\Details.cshtml.g.cs
@@ -474,3 +473,7 @@ D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingPr
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\WebProgrammingProject.csproj.GenerateResource.cache
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\en-US\WebProgrammingProject.resources.dll
 D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\tr-TR\WebProgrammingProject.resources.dll
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+D:\Projeler\ASPProjeleri\WebProgrammingProject\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs

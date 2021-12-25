@@ -1,5 +1,7 @@
-﻿@model IEnumerable<WebProgrammingProject.Models.ClubUser>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<WebProgrammingProject.Models.ClubUser>
 @inject LanguageService language
+@inject SignInManager<User> SignInManager
 
 @{
     ViewData["Title"] = "Index";

@@ -1,4 +1,9 @@
-﻿@model IEnumerable<WebProgrammingProject.Models.JobsUser>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<WebProgrammingProject.Models.JobsUser>
+@inject SignInManager<User> SignInManager
+
+
+
 @inject LanguageService language
 @{
     ViewData["Title"] = "Index";
