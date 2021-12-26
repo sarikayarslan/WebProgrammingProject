@@ -4,7 +4,8 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<div class="jumbotron mt-5">
+    <h1>@language.Getkey("Delete")</h1>
 
 <h3>  @language.Getkey("DeleteWarning")</h3>
 <div>
@@ -32,7 +33,9 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="JobsUserId" />
-        <input type="submit" value="@language.Getkey("Delete")" class="btn btn-danger" /> |
-        <a asp-action="Index">  @language.Getkey("BacktoList")</a>
+        <input type="submit" value="@language.Getkey("Delete")" class="btn btn-secondary" /> |
+        <a asp-action="Index" class="btn btn-secondary">  @language.Getkey("BacktoList")</a>
     </form>
+</div>
+
 </div>

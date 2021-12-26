@@ -7,6 +7,8 @@
     ViewData["Title"] = "Index";
 }
 
+<div class="jumbotron mt-5">
+    
 <h1>@language.Getkey("MyClubs")</h1>
 
 <br />
@@ -44,11 +46,13 @@
                 @Html.DisplayFor(modelItem => item.JoinDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">@language.Getkey("Edit")</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">@language.Getkey("Details")</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">@language.Getkey("Delete")</a>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.Id">@language.Getkey("Edit")</a> |
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.Id">@language.Getkey("Details")</a> |
+                <a asp-action="Delete" class="btn btn-secondary" asp-route-id="@item.Id">@language.Getkey("Delete")</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+</div>

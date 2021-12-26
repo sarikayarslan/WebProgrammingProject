@@ -4,6 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
+<div class="jumbotron mt-5">
+    
 <h1> @language.Getkey("Details")</h1>
 
 <div>
@@ -36,6 +38,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id"> @language.Getkey("JoinDate")</a> |
-    <a asp-action="Index"> @language.Getkey("BacktoList")</a>
+    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@Model.Id"> @language.Getkey("JoinDate")</a> |
+    <a asp-action="Index" class="btn btn-secondary"> @language.Getkey("BacktoList")</a>
+</div>
+
 </div>
